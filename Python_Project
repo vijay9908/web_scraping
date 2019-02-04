@@ -1,0 +1,12 @@
+Web Scraping tool/WebScraping.py.txt
+
+from urllib.request import urlopen as urlopen
+from bs4 import BeautifulSoup as BeautifulSoup
+url=input("Enter url:")
+# Edit .select method in line 10 by giving the class or id you want to scrape from the webpage.
+req = urlopen(url)
+htmltext= req.read()
+req.close()
+refine = BeautifulSoup(htmltext, "html.parser")
+for i in refine.select(''):
+	print(i.text)
