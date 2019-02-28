@@ -1,9 +1,12 @@
-from urllib.request import urlopen as uropenfrom bs4 import BeautifulSoup as BeautifulSoup
+from urllib.request import urlopen as uropen
 from bs4 import BeautifulSoup as BeautifulSoup
-url=input("Enter url:")
-req = urlopen(url)
+from urllib.request import urlopen
+requrl=input("Enter url:")
+req = urlopen(requrl)
 htmltext= req.read()
 req.close()
 refine = BeautifulSoup(htmltext, "html.parser")
 for i in refine.select(''):
 	print(i.text)
+
+
